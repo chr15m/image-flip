@@ -1,0 +1,6 @@
+.*.swp
+0_LOG.txt
+files.txt
+node_modules
+package-lock.json
+images/
