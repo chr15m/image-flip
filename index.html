@@ -48,14 +48,17 @@
   }
 
   m.request({"url": "files.txt", deserialize: function(value) {return value}}).then(function(d) {
-    var files = shuffle(d.split("\n"));
+    var files = shuffle(d.split("\n")).filter(function (x) { return x; });
     document.documentElement.style.backgroundRepeat = "no-repeat";
     document.documentElement.style.backgroundSize = "contain";
     swapimage(0, files);
   });
 
   function swapimage(idx, files) {
-    var file = files[idx];
+    var file = null;
+    while (!file) {
+      file = files[idx % files.length];
+    }
     console.log(file);
     if (file.indexOf(".gif") > 0) {
       var timeout = Math.random() * 5000 + 5000;
