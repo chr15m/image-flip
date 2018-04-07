@@ -13,6 +13,16 @@
       background-color: #000;
       text-align: center;
     }
+
+    button {
+      border: 2px solid white;
+      border-radius: 3px;
+      background-color: black;
+      color: white;
+      font-size: 3em;
+      padding: 0.5em 1em;
+      margin: 1em;
+    }
   </style>
 </head>
 <body>
@@ -25,7 +35,7 @@
     fs.bind(el)();
     setTimeout(function() {
       $("fs").style.display = "none";
-    }, 1000);
+    }, 100);
   };
   
   document.addEventListener('webkitfullscreenchange', exitHandler, false);
