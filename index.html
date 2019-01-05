@@ -57,9 +57,7 @@
 <body>
 <button id="fs">full screen</button>
 <div id="info">
-  <img src="title.svg"/>
-  <p>tiny music tech</p>
-  <img src="logo.svg"/>
+  Info page.
 </div>
 <script>
   $ = document.getElementById.bind(document);
@@ -113,7 +111,7 @@
   }
 
   // show info screen on mouse click
-  document.documentElement.onmousedown = function(ev) {
+  /*document.documentElement.onmousedown = function(ev) {
     if (ev.target != fs) {
       if (info.style.display != "block") {
         info.style.display = "block";
@@ -121,7 +119,7 @@
         info.style.display = "";
       }
     }
-  }
+  }*/
 
   /**
    * Shuffles array in place.
