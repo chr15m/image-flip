@@ -103,23 +103,28 @@
     swapimage(0, files);
   });
 
-  function swapimage(idx, files) {
+  function swapimage(idx, files, previous) {
     var file = null;
     while (!file) {
       file = files[idx % files.length];
     }
     console.log(file);
-    if (file.indexOf(".gif") > 0) {
+    if (previous.indexOf(".gif") > 0) {
       var timeout = Math.random() * 5000 + 5000;
       console.log("gif", timeout);
     } else {
       var timeout = Math.random() * 2000 + 1000;
       console.log("img", timeout);
     }
-    document.documentElement.style.backgroundImage = "url(images/" + file + ")";
     idx += 1;
+    // preload
+    var i = new Image();
+    i.src = "images/" + file;
+    // then swap
     setTimeout(function() {
-      swapimage(idx + 1, files);
+      console.log("Setting bg to", file);
+      document.documentElement.style.backgroundImage = "url(images/" + file + ")";
+      swapimage(idx + 1, files, file);
     }, timeout);
   }
 
