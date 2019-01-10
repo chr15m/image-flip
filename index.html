@@ -109,11 +109,11 @@
       file = files[idx % files.length];
     }
     console.log(file);
-    if (previous.indexOf(".gif") > 0) {
-      var timeout = Math.random() * 5000 + 5000;
+    if (previous && previous.indexOf(".gif") > 0) {
+      var timeout = Math.random() * 5000 + 2000;
       console.log("gif", timeout);
     } else {
-      var timeout = Math.random() * 2000 + 1000;
+      var timeout = Math.random() * 1000 + 1000;
       console.log("img", timeout);
     }
     idx += 1;
